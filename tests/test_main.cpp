@@ -1,19 +1,19 @@
 #include <gtest/gtest.h>
 #include "../inc/main.hpp"
 
+
+struct FibonacciTest : public :: testing::Test
+{
+  //Given: stworzenie instancji klasy
+};
+
+
 TEST(StringTest, spinWords) {
     EXPECT_TRUE(3 == 3);
 }
-
-TEST(FibonacciTest, n_3) {
-  int fib = fibonacciNumbers(3);
-  EXPECT_TRUE(fib == 3);
+/*
+TEST_F(FibonacciTest, n_3) {
+  //When: wywolanie metody 
+  //Then: EXPECT_TRUE(fib == 3);
 }
-TEST(FibonacciTest, n_5) {
-  int fib = fibonacciNumbers(5);
-  EXPECT_TRUE(fib == 5);
-}
-TEST(FibonacciTest, n_7) {
-  int fib = fibonacciNumbers(7);
-  EXPECT_TRUE(fib == 13);
-}
+}*/
