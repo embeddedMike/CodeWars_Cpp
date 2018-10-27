@@ -12,7 +12,10 @@ before_install:
  - sudo cp -a include/gtest /usr/include
  - sudo cp -a libgtest_main.so libgtest.so /usr/lib/
 
+before_script:
+
 script:
+  - pwd
   - mkdir build
   - cd build
   - g++ -std=c++11 ../src/main.cpp -o main
