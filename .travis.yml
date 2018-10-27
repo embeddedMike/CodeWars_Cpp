@@ -1,7 +1,7 @@
 sudo: false
 language: cpp
 
-install:
+script:
   - sudo apt-get -qq update
   - sudo apt-get install -y libgtest-dev valgrind cmake
   - sudo wget https://github.com/google/googletest/archive/release-1.7.0.tar.gz
@@ -11,10 +11,9 @@ install:
   - sudo make
   - sudo cp -a include/gtest /usr/include
   - sudo cp -a libgtest_main.so libgtest.so /usr/lib/
-
-script:
-  - sudo mkdir build
+  - cd ..
+  - mkdir build
   - cd build/
-  - sudo g++ -std=c++11 ../src/main.cpp -o main
-  - sudo g++ /usr/lib/libgtest.so /usr/lib/libgtest_main.so -o main-ut ../tests/test_main.cpp
+  - g++ -std=c++11 ../src/main.cpp -o main
+  - g++ /usr/lib/libgtest.so /usr/lib/libgtest_main.so -o main-ut ../tests/test_main.cpp
 
