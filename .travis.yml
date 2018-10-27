@@ -12,6 +12,7 @@ install:
   - sudo cp -a include/gtest /usr/include
   - sudo cp -a libgtest_main.so libgtest.so /usr/lib/
 before_script:
+  - ls -l
   - mkdir build
   - cd build/
 script:
