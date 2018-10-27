@@ -3,5 +3,5 @@ language: cpp
 
 script:
   - ls -la
-  - g++ src/main.cpp 
+  - g++ -std=c++11 src/main.cpp 
 
