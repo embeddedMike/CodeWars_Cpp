@@ -15,5 +15,5 @@ script:
   - sudo mkdir build
   - cd build/
   - sudo g++ -std=c++11 ../src/main.cpp -o main
-  - sudo g++ -std=c++11 ../googletest-release-1.7.0/libgtest.so ../googletest-release-1.7.0/libgtest_main.so -o main-ut ../tests/test_main.cpp
+  - sudo g++ -std=c++11 -lgtest -libgtest_main -o main-ut ../tests/test_main.cpp
 
