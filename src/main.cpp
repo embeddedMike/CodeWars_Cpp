@@ -4,7 +4,8 @@
 #include "../inc/main.hpp"
 #include <vector>
 #include <map>
-
+#include <unordered_map>
+ 
   std::vector<int> firstNSmallest(const std::vector<int> arr, int n) {
   std::vector<int> smallestElements = {};
   std::map<int,int> elementsMap;
@@ -38,44 +39,34 @@
 }
 
 
-  std::vector<int> firstNSmallest2(const std::vector<int> arr, int n) {
-    std::vector<int> resultArray = {};
-    for(int i = 0; i < n; i++){
-      std::vector<int>::const_iterator result = std::min_element(arr.begin()+i,arr.end());
-      //int positon = result;
-      std::cout<<*result<<std::endl;
-    }
-    //std::vector<int>::const_iterator result = std::min_element(arr.begin()+1,arr.end());
-    //std::cout<<*result<<std::endl;
-    //std::cout<<result<<std::endl;
-    return resultArray;
-  }
 
 int main() {
-  std::map<int,int> elementsMap;
-  std::vector<int> tablica  = {1,2,3,4,1};
+  std::vector<std::vector<int>::iterator> mins = {};
+  std::unordered_multimap<int,int> elementsMap = {
+    {1,1},
+    {-4,4},
+    {1,5}
+  };
+  std::vector<int> tablica  = {1,2,3,-4,1};
   std::vector<int> result = {};
-  
-  result = firstNSmallest(tablica,3);
-  //for(auto& item : result) {
-  //  std::cout<<item<<std::endl;
+  //for(std::pair<int,int> element : elementsMap) {
+  //  std::cout << element.second << std::endl;
   //}
-  //std::cout<<fibonacciNumbers(10)<<std::endl;
-  std::vector<int>::iterator temp = result.begin();
-  for(int i = 0; i < 5; i++) {
-      if(*temp == tablica[i]) {
-      elementsMap[i];
-      //temp = result.begin()+1;
-      //std::cout<<&tablica[i];
+  std::vector<int>::iterator minIt = tablica.begin();
+  for(int i = 0; i < 3; i++) {
+
+    std::vector<int>::iterator result = std::min_element(minIt,tablica.end());
+    if(minIt == result) {
+      minIt++;
     }
-    
-  }
-  
-  for(std::map<int,int>::iterator it = elementsMap.begin(); it != elementsMap.end(); it++) {
-    std::cout << (*it).first << std::endl;
+    else {
+      minIt = result+1;
+    }
+    std::cout << *result << std::endl;
   }
 }
 
+ 
 std::string spinWords(const std::string &str) {
 
   std::string result("");
