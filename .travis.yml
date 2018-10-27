@@ -14,8 +14,8 @@ script:
   - sudo cp -a include/gtest /usr/include
   - sudo cp -a libgtest_main.so libgtest.so /usr/lib/
   - cd ..
-  - sudo mkdir build
+  - mkdir build
   - cd build/
-  - sudo g++ -std=c++11 ../src/main.cpp -o main
-  - sudo g++ -std=c++11 -lgtest -lgtest_main -o main-ut ../tests/test_main.cpp
+  - g++ -std=c++11 ../src/main.cpp -o main
+    #- g++ /usr/lib/libgtest.so /usr/lib/libgtest_main.so -o main-ut ../tests/test_main.cpp
 
