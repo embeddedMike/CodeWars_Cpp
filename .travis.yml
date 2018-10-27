@@ -11,10 +11,10 @@ install:
   - sudo make
   - sudo cp -a include/gtest /usr/include
   - sudo cp -a libgtest_main.so libgtest.so /usr/lib/
-script:
-  - pwd
+before_script:
   - mkdir build
-  - cd build
+  - cd build/
+script:
   - g++ -std=c++11 ../src/main.cpp -o main
   - g++ /usr/lib/libgtest.so /usr/lib/libgtest_main.so -o main-ut ../tests/test_main.cpp
 
