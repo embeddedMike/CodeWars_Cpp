@@ -2,7 +2,6 @@ sudo: false
 language: cpp
 
 script:
-  - cd build/
   - ls -la
-  - g++ ../src/main.cpp -o main
+  - g++ src/main.cpp 
 
