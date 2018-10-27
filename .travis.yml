@@ -1,19 +1,9 @@
 sudo: false
 language: cpp
 
-matrix:
-  include:
-    - os: linux
-    dist: trusty
-    compiler: gcc
-    env:
-      - COMPILER=g++-7
-    addons:
-      apt:
-        sources: ['ubuntu-toolchain-r-test']
-        packages: [g++-7, valgrind]
 
 script:
+  - sudo apt-get g++
   - sudo apt-get -qq update
   - sudo apt-get install -y libgtest-dev valgrind cmake
   - sudo wget https://github.com/google/googletest/archive/release-1.7.0.tar.gz
