@@ -8,8 +8,8 @@ script:
   - sudo wget https://github.com/google/googletest/archive/release-1.8.0.tar.gz
   - sudo tar -zxf release-1.8.0.tar.gz
   - cd googletest-release-1.8.0/
-  - g++ -Igoogletest -Igoogletest/include - googletest/src/gtest-all.cc
-  - rv libgtest.a gtest-all.o
+  - g++ -Igoogletest -Igoogletest/include -c googletest/src/gtest-all.cc
+    #- rv libgtest.a gtest-all.o
     #- sudo cmake -DBUILD_SHARED_LIBS=ON .
     #- sudo make
     #- sudo cp -a include/gtest /usr/include
@@ -19,4 +19,4 @@ script:
   - cd build/
   - g++ -std=c++11 ../src/main.cpp -o main
     #- g++ /usr/lib/libgtest.so /usr/lib/libgtest_main.so -lpthread -o main-ut ../tests/test_main.cpp
-  - g++ -I../googletest-release-1.8.0/googletest/include -pthread ../tests/test_main.cpp ../googletest-release-1.8/libgtest.a -o main-ut
+  - g++ -I../googletest-release-1.8.0/googletest/include -pthread ../tests/test_main.cpp ../googletest-release-1.8.0/libgtest.a -o main-ut
