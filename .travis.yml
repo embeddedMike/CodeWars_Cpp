@@ -4,8 +4,8 @@ language: cpp
 
 script:
 
-  - sudo apt install cmake
-  - git clone --depth 1 https://github.com/google/googletest.git
+  - sudo apt-get install cmake
+  - git clone https://github.com/google/googletest.git
 
   - cd googletest/
   - mkdir build
