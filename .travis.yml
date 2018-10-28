@@ -16,5 +16,5 @@ script:
   - mkdir build
   - cd build/
   - g++ -std=c++11 ../src/main.cpp -o main
-
+  - g++ ../tests/test_main.cpp -lgtest -lpthread -o main-ut
     #- g++ /usr/lib/libgtest.so /usr/lib/libgtest_main.so -lpthread -o main-ut ../tests/test_main.cpp
