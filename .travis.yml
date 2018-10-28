@@ -19,3 +19,5 @@ script:
     #- g++ ../tests/test_main.cpp -lgtest -lpthread -o main-ut
     #- g++ -o main-ut ../tests/test_main.cpp /usr/lib/libgtest.so /usr/lib/libgtest_main.so -lgtest -lpthread  
   - g++ -std=c++11 -o main-ut ../tests/test_main.cpp -lgtest -lpthread  
+  - ./main
+  - ./main-ut
