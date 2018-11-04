@@ -33,6 +33,7 @@ std::string driver(const std::array<std::string, 5> &data){
         result += data.at(2).substr(0,data.at(2).size());
         result.append(5 - data.at(2).size(),'9');
     }
+    std::transform(result.begin(),result.end(),result.begin(),[](unsigned char c) -> unsigned char { return std::toupper(c); });
     int index = data.at(3).size() - 2;
     result += data[3][index];
     if(data.at(4) == "M") {
@@ -45,11 +46,16 @@ std::string driver(const std::array<std::string, 5> &data){
    }else {   
         for(std::map<std::string,std::string>::iterator it = months.begin(); it != months.end(); ++it) {
             if(data.at(3).substr(3,3) == it->first) {
+                std::string women;
                 char valTmp = it->second[0];
                 int value = (int)valTmp;
                 value += 5;
                 valTmp = (char)value;
-                it->second[0] = valTmp;
+                //it->second[0] = valTmp;
+                women += valTmp;
+                women += it->second[1];
+                result += women;
+                std::cout<<women;
             }
         }
     }
@@ -65,6 +71,7 @@ std::string driver(const std::array<std::string, 5> &data){
     }
     result += "9AA";
     std::cout<<result<<std::endl;
+    std::transform(result.begin(),result.end(),result.begin(),[](unsigned char c) -> unsigned char { return std::toupper(c); });
     return result;
 }
 
@@ -72,8 +79,42 @@ std::string driver(const std::array<std::string, 5> &data){
 
 
 int main() {
-    const std::array<std::string, 5> data = {"Andrew","Robert","Lee","02-September-1981","M"};
+    const std::array<std::string, 5> data = {"Holland","Madeline","Scott","13-Jun-2000","M"};
     driver(data);
+    //std::string str = "abc123";
+    //std::transform(str.begin(),str.end(),str.begin(),[](unsigned char c) -> unsigned char { return std::toupper(c); });
+    //std::cout<<str;
+    
+    
+    std::map<std::string,std::string> months = {
+        {"Jan","01"},
+        {"Feb","02"},
+        {"Mar","03"},
+        {"Apr","04"},
+        {"May","05"},
+        {"June","06"},
+        {"Jul","07"},
+        {"Aug","08"},
+        {"Sep","09"},
+        {"Oct","10"},
+        {"Nov","11"},
+        {"Dec","12"},
+    };
+
+    std::cout<<data.at(3).substr(3,3);
+
+    
+        for(std::map<std::string,std::string>::iterator it = months.begin(); it != months.end(); ++it) {
+            if(data.at(3).substr(3,3) == it->first) {
+                char valTmp = it->second[0];
+                std::cout<<valTmp;
+                int value = (int)valTmp;
+                value += 5;
+                //valTmp = (char)value;
+                //it->second[0] = valTmp;
+            }
+        }
+
     /*
     std::map<std::string,std::string> months = {
         {"Jan","01"},
