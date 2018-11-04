@@ -6,5 +6,6 @@ SumStrings::SumStrings(std::string firstNumber, std::string secondNumber)
   {}
 
 std::string SumStrings::sumValues() {
-  return "4";
+  int result = stoi(firstNumber_) + stoi(secondNumber_);
+  return std::to_string(result);
 }
