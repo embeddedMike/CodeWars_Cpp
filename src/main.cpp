@@ -79,109 +79,17 @@ std::string driver(const std::array<std::string, 5> &data){
 
 
 int main() {
-    const std::array<std::string, 5> data = {"Holland","Madeline","Scott","13-Jun-2000","M"};
-    driver(data);
-    //std::string str = "abc123";
-    //std::transform(str.begin(),str.end(),str.begin(),[](unsigned char c) -> unsigned char { return std::toupper(c); });
-    //std::cout<<str;
-    
-    
-    std::map<std::string,std::string> months = {
-        {"Jan","01"},
-        {"Feb","02"},
-        {"Mar","03"},
-        {"Apr","04"},
-        {"May","05"},
-        {"June","06"},
-        {"Jul","07"},
-        {"Aug","08"},
-        {"Sep","09"},
-        {"Oct","10"},
-        {"Nov","11"},
-        {"Dec","12"},
-    };
-
-    std::cout<<data.at(3).substr(3,3);
-
-    
-        for(std::map<std::string,std::string>::iterator it = months.begin(); it != months.end(); ++it) {
-            if(data.at(3).substr(3,3) == it->first) {
-                char valTmp = it->second[0];
-                std::cout<<valTmp;
-                int value = (int)valTmp;
-                value += 5;
-                //valTmp = (char)value;
-                //it->second[0] = valTmp;
-            }
-        }
-
-    /*
-    std::map<std::string,std::string> months = {
-        {"Jan","01"},
-        {"Feb","02"},
-        {"Mar","03"},
-        {"Apr","04"},
-        {"May","05"},
-        {"June","06"},
-        {"Jul","07"},
-        {"Aug","08"},
-        {"Sep","09"},
-        {"Oct","10"},
-        {"Nov","11"},
-        {"Dec","12"},
-    };
-    std::string result;
-    if(data.at(2).size() > 5){
-        result += data.at(2).substr(0,5);
-    }else
-    {
-        result += data.at(2).substr(0,data.at(2).size());
-        result.append(5 - data.at(2).size(),'9');
-    }
-    int index = data.at(3).size() - 2;
-    result += data[3][index];
-    if(data.at(4) == "M") {
-        std::cout<< data.at(3).substr(3,3)<<std::endl;
-        //for(auto const& [key, val] : months) {
-        //    if(data.at(3).substr(3,3) == key){
-        //        result += val;
-        //    }
-        //}
-        for(std::map<std::string,std::string>::iterator it = months.begin(); it != months.end(); ++it) {
-            if(data.at(3).substr(3,3) == it->first) {
-                result += it->second;
-            }
-        }
-   }else {   
-        //for(auto& [key, val] : months) {
-        //    if(data.at(3).substr(3,3) == key){
-        //        char valTmp = val[0];
-        //        int value = (int)valTmp;
-        //        value += 5;
-        //        valTmp = (char)value;
-        //        val[0] = valTmp;
-        //    }
-        for(std::map<std::string,std::string>::iterator it = months.begin(); it != months.end(); ++it) {
-            if(data.at(3).substr(3,3) == it->first) {
-                char valTmp = it->second[0];
-                int value = (int)valTmp;
-                value += 5;
-                valTmp = (char)value;
-                it->second[0] = valTmp;
-            }
+    int ammo = 4;
+    double aim = 0.64;
+    int coefficient = static_cast<int>(ammo * aim);
+    std::string score = "|~~2~~~22~2~~22~2~~~~2~~~|";
+    for(std::string::iterator it = score.begin()+1; it != score.end()-1; it++) {
+        if(*it == '2' && coefficient != 0){
+            *it = 'X';
+            coefficient--;
         }
     }
-    result += data[3][0];
-    result += data[3][1];
-    index = data.at(3).size() - 1;
-    result += data[3][index];
-    result += data[0][0];
-    if(data.at(1).empty()) {
-        result += '9';
-    }else {
-        result += data[1][0];
+    for(std::string::iterator it = score.begin(); it != score.end(); it++) {
+        std::cout<<*it;
     }
-    result += "9AA";
-    std::cout<<result<<std::endl;
-    */
 }
