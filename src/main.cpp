@@ -79,17 +79,23 @@ std::string driver(const std::array<std::string, 5> &data){
 
 
 int main() {
-    int ammo = 4;
-    double aim = 0.64;
-    int coefficient = static_cast<int>(ammo * aim);
-    std::string score = "|~~2~~~22~2~~22~2~~~~2~~~|";
-    for(std::string::iterator it = score.begin()+1; it != score.end()-1; it++) {
-        if(*it == '2' && coefficient != 0){
-            *it = 'X';
-            coefficient--;
+    int number = 1024;
+    int count = 0;
+    std::string tidyNumber = std::to_string(number);
+    std::string::iterator tmp = tidyNumber.begin();
+    for(std::string::iterator it = tidyNumber.begin()+1; it != tidyNumber.end(); it++) {
+        std::cout<<*it<<std::endl;
+        if(*tmp <= *it){
+            count++;
+            tmp = it;
+        }else {
+            break;
         }
+        
     }
-    for(std::string::iterator it = score.begin(); it != score.end(); it++) {
-        std::cout<<*it;
+    std::cout<<count;
+    if(count == tidyNumber.size() - 1){
+        std::cout<<"dupa;";
     }
+
 }
