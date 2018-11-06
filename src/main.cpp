@@ -76,26 +76,42 @@ std::string driver(const std::array<std::string, 5> &data){
 }
 
 
+//std::map<std::string,char> operations = {
+//    {"0F12",'+'},
+//    {"B7A2",'-'},
+//    {"C3D9",''},
+//};
 
 
 int main() {
-    int number = 1024;
-    int count = 0;
-    std::string tidyNumber = std::to_string(number);
-    std::string::iterator tmp = tidyNumber.begin();
-    for(std::string::iterator it = tidyNumber.begin()+1; it != tidyNumber.end(); it++) {
-        std::cout<<*it<<std::endl;
-        if(*tmp <= *it){
-            count++;
-            tmp = it;
-        }else {
-            break;
-        }
-        
+    int tmpResult = 0;
+    std::string result = "0000";
+    std::string packet = "H1H10F1299990001F4F4";
+    std::string operation = packet.substr(4,4);
+    packet.replace(4,4,"FFFF");
+    if(operation == "0F12") {
+        tmpResult = std::stoi(packet.substr(8,4)) + std::stoi(packet.substr(12,4));
     }
-    std::cout<<count;
-    if(count == tidyNumber.size() - 1){
-        std::cout<<"dupa;";
+    if(operation == "B7A2") {
+        tmpResult = std::stoi(packet.substr(8,4)) - std::stoi(packet.substr(12,4));
     }
+    if(operation == "C3D9") {
+        tmpResult = std::stoi(packet.substr(8,4)) * std::stoi(packet.substr(12,4));
+    }
+    if(tmpResult >= 9999 && tmpResult >= 0){
+        result.append(std::to_string(tmpResult));
+        result.erase(0,std::to_string(tmpResult).size());
+        packet.replace(8,4,result);
+    }
+    if(tmpResult > 9999) {
+            packet.replace(8,4,"9999");
 
+    }
+    if(tmpResult < 0){
+            packet.replace(8,4,"0000");
+    } 
+        
+    packet.replace(8,4,result);
+    packet.replace(12,4,"0000");
+    std::cout<<packet;
 }
