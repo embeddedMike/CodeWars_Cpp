@@ -9,7 +9,7 @@
 #include "../inc/main.hpp"
 #include "../inc/sumStrings.hpp"
 #include <array>
-
+#include <list>
 std::string driver(const std::array<std::string, 5> &data){    
     std::map<std::string,std::string> months = {
         {"Jan","01"},
@@ -82,36 +82,26 @@ std::string driver(const std::array<std::string, 5> &data){
 //    {"C3D9",''},
 //};
 
+std::string get_middle(std::string input) 
+{
+  int indexFirst = 0;
+  int indexSecond = 0;
+  std::string result;
+  if(input.size() % 2 == 0) {
+    indexSecond = (input.size()/2);
+    indexFirst = indexSecond - 1;
+    result += input[indexFirst];
+    result += input[indexSecond];
+    return result;
+  }else {
+    indexFirst = (input.size() - 1) / 2;
+    result = input[indexFirst];
+    return result;
+  }
+}
 
 int main() {
-    int tmpResult = 0;
-    std::string result = "0000";
-    std::string packet = "H1H10F1299990001F4F4";
-    std::string operation = packet.substr(4,4);
-    packet.replace(4,4,"FFFF");
-    if(operation == "0F12") {
-        tmpResult = std::stoi(packet.substr(8,4)) + std::stoi(packet.substr(12,4));
-    }
-    if(operation == "B7A2") {
-        tmpResult = std::stoi(packet.substr(8,4)) - std::stoi(packet.substr(12,4));
-    }
-    if(operation == "C3D9") {
-        tmpResult = std::stoi(packet.substr(8,4)) * std::stoi(packet.substr(12,4));
-    }
-    if(tmpResult >= 9999 && tmpResult >= 0){
-        result.append(std::to_string(tmpResult));
-        result.erase(0,std::to_string(tmpResult).size());
-        packet.replace(8,4,result);
-    }
-    if(tmpResult > 9999) {
-            packet.replace(8,4,"9999");
-
-    }
-    if(tmpResult < 0){
-            packet.replace(8,4,"0000");
-    } 
-        
-    packet.replace(8,4,result);
-    packet.replace(12,4,"0000");
-    std::cout<<packet;
+    std::string s = "test";
+    std::string ss = "testing";
+    std::cout << get_middle(s);    
 }
