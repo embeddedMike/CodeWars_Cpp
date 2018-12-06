@@ -26,6 +26,6 @@ TEST_F(CountDigTest, checkDigits3) {
 TEST_F(CountDigTest, checkDigits4) {
   int result = digits1.nbDig(10,0);
   std::cout << result << std::endl;
-  ASSERT_TRUE(result == 0);
+  ASSERT_TRUE(result == 3);
 }
 
