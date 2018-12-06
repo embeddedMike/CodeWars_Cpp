@@ -12,6 +12,6 @@
 
 int main() {
     CountDig digits1;
-    int result = digits1.nbDig(1,2);
+    int result = digits1.nbDig(0,0);
     std::cout << result << std::endl;
 }

@@ -5,7 +5,7 @@ int CountDig::nbDig(int n, int d) {
     std::string digit("");
     std::string countDigit(std::to_string(d));
     for(int i = 0; i <= n; i++) {
-        digit += std::to_string(pow(i,2));
+        digit += std::to_string((int)pow(i,2));
         for(auto item : digit){
             if(item == countDigit[0]) {
                 result++;
