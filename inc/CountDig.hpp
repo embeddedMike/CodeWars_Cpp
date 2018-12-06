@@ -1,7 +1,9 @@
 #pragma once
+#include <cmath>
+#include <string>
 
 class CountDig
 {
     public:
-        int nbDig(int n, int d);
+      static int nbDig(int n, int d);
 };
