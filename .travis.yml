@@ -19,6 +19,6 @@ script:
   - g++ -std=c++0x ../src/*.cpp -o main
     #- g++ ../tests/test_main.cpp -lgtest -lpthread -o main-ut
     #- g++ -o main-ut ../tests/test_main.cpp /usr/lib/libgtest.so /usr/lib/libgtest_main.so -lgtest -lpthread  
-  - g++ -std=c++0x -o main-ut ../tests/PrinterTest.cpp -lgtest -lpthread ../src/Printer.cpp ../src/CountDig.cpp 
+  - g++ -std=c++0x -o main-ut ../tests/test_main.cpp -lgtest -lpthread ../src/Printer.cpp ../src/CountDig.cpp 
   - ./main
   - ./main-ut
