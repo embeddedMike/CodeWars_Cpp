@@ -5,7 +5,8 @@ struct HighestLowestTest : public ::testing::Test {
     HighestLowest highestlowest1;
 };
 
-TEST_F(HighestLowestTest,firstTest) {
+TEST_F(HighestLowestTest,appendHighestAndLowestValue) {
     std::string result = highestlowest1.highAndLow("42 1 3 -9");
     ASSERT_TRUE(result == "42 -9");
 }
+
