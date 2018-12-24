@@ -1,6 +1,33 @@
 sudo: true
 language: cpp
-dist: precise
+compiler: gcc
+dist: trusty
+
+
+before_install:
+  # C++17
+  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+  - sudo apt-get update -qq
+
+addons: 
+  apt: 
+    sources: 
+        - ubuntu-toolchain-r-test 
+    packages: 
+        - lcov
+
+install: 
+  # C++17
+  - sudo apt-get install -qq g++-6
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
+  - sudo pip install codecov
+
+os:
+  - linux
+
+compiler:
+  - g++
+  - clang
 
 
 script:
