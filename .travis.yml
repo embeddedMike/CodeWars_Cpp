@@ -27,8 +27,6 @@ os:
 
 compiler:
   - g++
-  - clang
-
 
 script:
 
