@@ -2,10 +2,17 @@
 #include "../inc/VowelCount.hpp"
 
 struct VowelCountTest : public ::testing::Test {
-  VowelCount Vowels1;
+  VowelCount Vowels;
 };
 
-TEST_F(VowelCountTest, getCountPass) {
-  ASSERT_TRUE(false);
+TEST_F(VowelCountTest, VowelsEqual1) {
+  int result = Vowels.getCount("abc");
+  ASSERT_TRUE(result == 1);
 }
+
+TEST_F(VowelCountTest, VowelsEqual2) {
+  int result = Vowels.getCount("abco");
+  ASSERT_TRUE(result == 2);
+}
+
 
