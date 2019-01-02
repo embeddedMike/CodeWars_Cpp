@@ -1,7 +1,7 @@
 #include "../inc/VowelCount.hpp"
 
 int VowelCount::getCount(const std::string& inputStr){
-  const std::string vowels = "aeio";
+  const std::string vowels = "aeiou";
   int num_vowels = 0;
   
   for(const auto item1 : inputStr) {
