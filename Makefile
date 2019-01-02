@@ -7,11 +7,13 @@ build/main: build/main.o build/CountDig.o
 	g++ -std=c++14 build/main.o	build/CountDig.o 			 			   \
 	-o build/main
 
-build/main-ut: build/test_main.o build/countDigTest.o build/CountDig.o
+build/main-ut: build/test_main.o build/VowelCountTest.o build/VowelCount.o
 	g++ -std=c++14 /usr/lib/libgtest.so /usr/lib/libgtest_main.so -pthread \
 	build/test_main.o 													   \
 	build/countDigTest.o 												   \
 	build/CountDig.o 													   \
+	build/VowelCountTest.o 													   \
+	build/VowelCount.o 													   \
 	-o build/main-ut											
 
 #src
@@ -27,6 +29,9 @@ build/Printer.o: src/Printer.cpp
 build/CountDig.o: src/CountDig.cpp
 	g++ -c src/CountDig.cpp -o build/CountDig.o
 
+build/VowelCount.o: src/VowelCount.cpp
+	g++ -c src/VowelCount.cpp -o build/VowelCount.o
+
 #gtest
 build/test_main.o: tests/test_main.cpp
 	g++ -c tests/test_main.cpp -o build/test_main.o 
@@ -40,6 +45,8 @@ build/HighestLowestTest.o: tests/HighestLowestTest.cpp
 build/countDigTest.o: tests/countDigTest.cpp
 	g++ -c tests/countDigTest.cpp -o build/countDigTest.o 
 
+build/VowelCountTest.o: tests/VowelCountTest.cpp
+	g++ -c tests/VowelCountTest.cpp -o build/VowelCountTest.o 
 #clean
 clean:
 	rm -f build/*.o build/main build/main-ut			
