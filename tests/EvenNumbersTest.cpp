@@ -7,5 +7,5 @@ struct EvenNumbersTest : public ::testing::Test {
 
 TEST_F(EvenNumbersTest, getResultFromEvenNumbersInVector) {
   std::vector<int> result = EvenNumbersGtest.evenNumbersInVector({1,2,3},3);
-  ASSERT_TRUE(result[2] == 1);
+  ASSERT_TRUE(result[0] == 2);
 }
