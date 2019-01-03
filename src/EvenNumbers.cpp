@@ -11,5 +11,6 @@ std::vector<int> EvenNumbers::evenNumbersInVector(std::vector<int> arr, int n) {
         }
       }
     }
+  std::reverse(std::begin(result),std::end(result));
   return result;
 }
