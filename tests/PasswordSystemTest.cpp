@@ -6,6 +6,6 @@ struct PasswordSystemTest : public ::testing::Test {
 };
 
 TEST_F(PasswordSystemTest, getValueFromHelpZoom) {
-  std::string result = PassSysGtest.helpZoom({1,0,0,1,0,0,1});
+  std::string result = PassSysGtest.helpZoom({0,0,0,0,0});
   ASSERT_STREQ("Yes",result.c_str());
 }
