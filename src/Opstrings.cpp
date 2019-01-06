@@ -41,7 +41,6 @@ std::string Opstrings::horMirror(const std::string &strng)
     strContainer.at(lowerBound) = tempUpperBound;
     lowerBound++;
     upperBound--;
-    //std::cout << lowerBound << upperBound << std::endl;
   }
   for(auto item : strContainer)
   {
