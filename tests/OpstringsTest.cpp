@@ -7,6 +7,6 @@ struct OpstringsTest : public ::testing::Test {
 
 TEST_F(OpstringsTest, getValueFromVertMirror)
 {
-  std::string result = OpstringsGtest.vertMirror("123");
-  ASSERT_STREQ(" ",result.c_str());
+  std::string result = OpstringsGtest.vertMirror("abcd\nefgh\nijkl\nmnop");
+  ASSERT_STREQ("dcba\nhgfe\nlkji\nponm",result.c_str());
 }
