@@ -7,13 +7,13 @@ build/main: build/main.o build/CountDig.o
 	g++ -std=c++14 build/main.o	build/CountDig.o 			 			   \
 	-o build/main
 
-build/main-ut: build/test_main.o build/EvenNumbersTest.o build/EvenNumbers.o
+build/main-ut: build/test_main.o build/PasswordSystemTest.o build/PasswordSystem.o
 	g++ -std=c++14 /usr/lib/libgtest.so /usr/lib/libgtest_main.so -pthread \
 	build/test_main.o 													   \
 	build/countDigTest.o 												   \
 	build/CountDig.o 													   \
-	build/EvenNumbersTest.o 													   \
-	build/EvenNumbers.o 													   \
+	build/PasswordSystemTest.o 													   \
+	build/PasswordSystem.o 													   \
 	-o build/main-ut											
 
 #src
@@ -35,6 +35,9 @@ build/VowelCount.o: src/VowelCount.cpp
 build/EvenNumbers.o: src/EvenNumbers.cpp
 	g++ -c src/EvenNumbers.cpp -o build/EvenNumbers.o
 
+build/PasswordSystem.o: src/PasswordSystem.cpp
+	g++ -c src/PasswordSystem.cpp -o build/PasswordSystem.o
+
 #gtest
 build/test_main.o: tests/test_main.cpp
 	g++ -c tests/test_main.cpp -o build/test_main.o 
@@ -53,6 +56,9 @@ build/VowelCountTest.o: tests/VowelCountTest.cpp
 
 build/EvenNumbersTest.o: tests/EvenNumbersTest.cpp
 	g++ -c tests/EvenNumbersTest.cpp -o build/EvenNumbersTest.o 
+
+build/PasswordSystemTest.o: tests/PasswordSystemTest.cpp
+	g++ -c tests/PasswordSystemTest.cpp -o build/PasswordSystemTest.o 
 #clean
 clean:
 	rm -f build/*.o build/main build/main-ut			
