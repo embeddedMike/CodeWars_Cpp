@@ -10,3 +10,9 @@ TEST_F(OpstringsTest, getValueFromVertMirror)
   std::string result = OpstringsGtest.vertMirror("abcd\nefgh\nijkl\nmnop");
   ASSERT_STREQ("dcba\nhgfe\nlkji\nponm",result.c_str());
 }
+
+TEST_F(OpstringsTest, getValueFromHorMirror)
+{
+  std::string result = OpstringsGtest.horMirror("abcd\nefgh\nijkl\nmnop");
+  ASSERT_STREQ("mnop\nijkl\nefgh\nabcd",result.c_str());
+}
