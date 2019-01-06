@@ -3,8 +3,8 @@
 all: build/main build/main-ut
 
 #exec
-build/main: build/main.o build/CountDig.o
-	g++ -std=c++14 build/main.o	build/CountDig.o 			 			   \
+build/main: build/main.o build/Opstrings.o
+	g++ -std=c++14 build/main.o	build/Opstrings.o 			 			   \
 	-o build/main
 
 build/main-ut: build/test_main.o build/OpstringsTest.o build/Opstrings.o
