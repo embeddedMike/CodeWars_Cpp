@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include <regex>
+#include <iostream>
 class Opstrings
 {
   public:
