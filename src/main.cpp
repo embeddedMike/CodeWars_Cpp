@@ -1,12 +1,12 @@
 #include "../inc/TemplateExamples.hpp"
-#include "../inc/Opstrings.hpp"
+//#include "../inc/Opstrings.hpp"
 //#include <chrono>
 //#include "../inc/main.hpp"
 //#include "../inc/CountDig.hpp"
 int main() {
-  print(1);
+  /*print(1);
   Opstrings TestObject;
   std::cout << TestObject.vertMirror("abcd\nefgh\nijkl\nmnop") << std::endl;
   std::cout << TestObject.oper(TestObject.vertMirror,"abcd\nefgh\nijkl\nmnop") << std::endl;
-  
+  */
 }
