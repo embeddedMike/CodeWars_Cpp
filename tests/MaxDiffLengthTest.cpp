@@ -12,3 +12,19 @@ TEST_F(MaxDiffLengthTest, getValueFromMxDifLg)
   int result = MaxDiffLengthGtest.mxdiflg(s1,s2);
   ASSERT_TRUE(result == 13);
 }
+
+TEST_F(MaxDiffLengthTest, getValueFromMxDifLg_2)
+{
+  std::vector<std::string> s1 = {"ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb", "oocccffuucccjjjkkkjyyyeehh"};
+  std::vector<std::string> s2 = {"bbbaaayddqbbrrrv"};
+  int result = MaxDiffLengthGtest.mxdiflg(s1,s2);
+  ASSERT_TRUE(result == 10);
+}
+
+TEST_F(MaxDiffLengthTest, getValueFromMxDifLg_3)
+{
+  std::vector<std::string> s1 = {"ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb", "oocccffuucccjjjkkkjyyyeehh"};
+  std::vector<std::string> s2 = {};
+  int result = MaxDiffLengthGtest.mxdiflg(s1,s2);
+  ASSERT_TRUE(result == -1);
+}
