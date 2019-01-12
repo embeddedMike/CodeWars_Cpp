@@ -4,16 +4,16 @@ all: build/main build/main-ut
 
 #exec
 build/main: build/main.o 
-	g++ -std=c++14 build/main.o	 			 			   \
+	g++ -std=c++14 build/main.o	 			 			   				   \
 	-o build/main
 
-build/main-ut: build/test_main.o build/MaxDiffLengthTest.o build/MaxDiffLength.o
+build/main-ut: build/test_main.o build/DuplicateWordsTest.o build/DuplicateWords.o
 	g++ -std=c++14 /usr/lib/libgtest.so /usr/lib/libgtest_main.so -pthread \
 	build/test_main.o 													   \
 	build/countDigTest.o 												   \
 	build/CountDig.o 													   \
-	build/MaxDiffLengthTest.o 													   \
-	build/MaxDiffLength.o 													   \
+	build/DuplicateWordsTest.o 											   \
+	build/DuplicateWords.o 												   \
 	-o build/main-ut											
 
 #src
@@ -35,8 +35,8 @@ build/VowelCount.o: src/VowelCount.cpp
 build/EvenNumbers.o: src/EvenNumbers.cpp
 	g++ -c src/EvenNumbers.cpp -o build/EvenNumbers.o
 
-build/MaxDiffLength.o: src/MaxDiffLength.cpp
-	g++ -c src/MaxDiffLength.cpp -o build/MaxDiffLength.o
+build/DuplicateWords.o: src/DuplicateWords.cpp
+	g++ -c src/DuplicateWords.cpp -o build/DuplicateWords.o
 
 #gtest
 build/test_main.o: tests/test_main.cpp
@@ -57,8 +57,8 @@ build/VowelCountTest.o: tests/VowelCountTest.cpp
 build/EvenNumbersTest.o: tests/EvenNumbersTest.cpp
 	g++ -c tests/EvenNumbersTest.cpp -o build/EvenNumbersTest.o 
 
-build/MaxDiffLengthTest.o: tests/MaxDiffLengthTest.cpp
-	g++ -c tests/MaxDiffLengthTest.cpp -o build/MaxDiffLengthTest.o 
+build/DuplicateWordsTest.o: tests/DuplicateWordsTest.cpp
+	g++ -c tests/DuplicateWordsTest.cpp -o build/DuplicateWordsTest.o 
 #clean
 clean:
 	rm -f build/*.o build/main build/main-ut			
