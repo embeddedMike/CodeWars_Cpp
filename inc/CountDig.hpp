@@ -2,8 +2,7 @@
 #include <cmath>
 #include <string>
 
-class CountDig
-{
-    public:
-      static int nbDig(int n, int d);
+class CountDig {
+ public:
+  static int nbDig(int n, int d);
 };

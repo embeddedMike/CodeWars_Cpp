@@ -3,17 +3,17 @@
 all: build/main build/main-ut
 
 #exec
-build/main: build/main.o build/Opstrings.o
-	g++ -std=c++14 build/main.o	build/Opstrings.o 			 			   \
+build/main: build/main.o 
+	g++ -std=c++14 build/main.o	 			 			   \
 	-o build/main
 
-build/main-ut: build/test_main.o build/OpstringsTest.o build/Opstrings.o
+build/main-ut: build/test_main.o build/MaxDiffLengthTest.o build/MaxDiffLength.o
 	g++ -std=c++14 /usr/lib/libgtest.so /usr/lib/libgtest_main.so -pthread \
 	build/test_main.o 													   \
 	build/countDigTest.o 												   \
 	build/CountDig.o 													   \
-	build/OpstringsTest.o 													   \
-	build/Opstrings.o 													   \
+	build/MaxDiffLengthTest.o 													   \
+	build/MaxDiffLength.o 													   \
 	-o build/main-ut											
 
 #src
@@ -35,8 +35,8 @@ build/VowelCount.o: src/VowelCount.cpp
 build/EvenNumbers.o: src/EvenNumbers.cpp
 	g++ -c src/EvenNumbers.cpp -o build/EvenNumbers.o
 
-build/Opstrings.o: src/Opstrings.cpp
-	g++ -c src/Opstrings.cpp -o build/Opstrings.o
+build/MaxDiffLength.o: src/MaxDiffLength.cpp
+	g++ -c src/MaxDiffLength.cpp -o build/MaxDiffLength.o
 
 #gtest
 build/test_main.o: tests/test_main.cpp
@@ -57,8 +57,8 @@ build/VowelCountTest.o: tests/VowelCountTest.cpp
 build/EvenNumbersTest.o: tests/EvenNumbersTest.cpp
 	g++ -c tests/EvenNumbersTest.cpp -o build/EvenNumbersTest.o 
 
-build/OpstringsTest.o: tests/OpstringsTest.cpp
-	g++ -c tests/OpstringsTest.cpp -o build/OpstringsTest.o 
+build/MaxDiffLengthTest.o: tests/MaxDiffLengthTest.cpp
+	g++ -c tests/MaxDiffLengthTest.cpp -o build/MaxDiffLengthTest.o 
 #clean
 clean:
 	rm -f build/*.o build/main build/main-ut			
