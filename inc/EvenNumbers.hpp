@@ -1,7 +1,7 @@
 #pragma once
-#include <vector>
 #include <algorithm>
+#include <vector>
 class EvenNumbers {
-  public :
-    std::vector<int> evenNumbersInVector(std::vector<int> arr, int n);
+ public:
+  std::vector<int> evenNumbersInVector(std::vector<int> arr, int n);
 };
