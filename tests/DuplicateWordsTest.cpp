@@ -6,6 +6,7 @@ struct DuplicateWordsTest : public ::testing::Test {
 };
 
 TEST_F(DuplicateWordsTest, getValueFromRemoveDuplicateWords) {
-  std::string result = DuplicateWordGtest.removeDuplicateWords("123");
-  ASSERT_STREQ(" ", result.c_str());
+  std::string result = DuplicateWordGtest.removeDuplicateWords(
+      "123 abc abc asia asia tola asia");
+  ASSERT_STREQ("123 abc asia tola", result.c_str());
 }
