@@ -1,7 +1,7 @@
 #pragma once
-#include <string>
 #include <iostream>
+#include <string>
 class Printer {
-    public:
-       static std::string printerError(const std::string &s);
+ public:
+  static std::string printerError(const std::string &s);
 };

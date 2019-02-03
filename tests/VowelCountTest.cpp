@@ -14,5 +14,3 @@ TEST_F(VowelCountTest, VowelsEqual2) {
   int result = Vowels.getCount("abco");
   ASSERT_TRUE(result == 2);
 }
-
-

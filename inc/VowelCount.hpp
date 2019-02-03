@@ -1,8 +1,7 @@
 #pragma once
-#include <string>
 #include <iostream>
+#include <string>
 class VowelCount {
-    public:
-      int getCount(const std::string& inputStr);
+ public:
+  int getCount(const std::string& inputStr);
 };
-

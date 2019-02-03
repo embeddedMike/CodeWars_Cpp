@@ -1,8 +1,8 @@
 #pragma once
 #include <iostream>
-#include <string>
 #include <regex>
+#include <string>
 class HighestLowest {
-    public:
-        std::string highAndLow(const std::string& numbers);
+ public:
+  std::string highAndLow(const std::string& numbers);
 };
