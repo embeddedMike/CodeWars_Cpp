@@ -6,6 +6,6 @@ struct OppositeNumberTest : public ::testing::Test {
 };
 
 TEST_F(OppositeNumberTest, getResultFromOpposite) {
-  int result = OppositeNumberGtest.opposite(3);
-  ASSERT_TRUE(result == 1);
+  int result = OppositeNumberGtest.opposite(1);
+  ASSERT_TRUE(result == -1);
 }
