@@ -3,16 +3,16 @@
 all: build/main build/main-ut
 
 #exec
-build/main: build/main.o build/DuplicateWords.o
-	g++ -g -std=c++14 build/main.o	 			 			   				   \
-	build/DuplicateWords.o                                                    \
+build/main: build/main.o build/OppositeNumber.o
+	g++ -g -std=c++14 build/main.o \
+	build/OppositeNumber.o \
 	-o build/main                                                           
 
-build/main-ut: build/test_main.o build/DuplicateWordsTest.o build/DuplicateWords.o
+build/main-ut: build/test_main.o build/OppositeNumberTest.o build/OppositeNumber.o
 	g++ -g -std=c++14 /usr/lib/libgtest.so /usr/lib/libgtest_main.so -pthread \
-	build/test_main.o 													   \
-	build/DuplicateWordsTest.o 											   \
-	build/DuplicateWords.o 												   \
+	build/test_main.o \
+	build/OppositeNumberTest.o \
+	build/OppositeNumber.o \
 	-o build/main-ut											
 
 #src
@@ -34,8 +34,8 @@ build/VowelCount.o: src/VowelCount.cpp
 build/EvenNumbers.o: src/EvenNumbers.cpp
 	g++ -g -c src/EvenNumbers.cpp -o build/EvenNumbers.o
 
-build/DuplicateWords.o: src/DuplicateWords.cpp
-	g++ -g -c src/DuplicateWords.cpp -o build/DuplicateWords.o
+build/OppositeNumber.o: src/OppositeNumber.cpp
+	g++ -g -c src/OppositeNumber.cpp -o build/OppositeNumber.o
 
 #gtest
 build/test_main.o: tests/test_main.cpp
@@ -56,8 +56,8 @@ build/VowelCountTest.o: tests/VowelCountTest.cpp
 build/EvenNumbersTest.o: tests/EvenNumbersTest.cpp
 	g++ -g -c tests/EvenNumbersTest.cpp -o build/EvenNumbersTest.o 
 
-build/DuplicateWordsTest.o: tests/DuplicateWordsTest.cpp
-	g++ -g -c tests/DuplicateWordsTest.cpp -o build/DuplicateWordsTest.o 
+build/OppositeNumberTest.o: tests/OppositeNumberTest.cpp
+	g++ -g -c tests/OppositeNumberTest.cpp -o build/OppositeNumberTest.o 
 #clean
 clean:
 	rm -f build/*.o build/main build/main-ut			
