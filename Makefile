@@ -3,16 +3,16 @@
 all: build/main build/main-ut
 
 #exec
-build/main: build/main.o build/removeExclamationMarks.o
+build/main: build/main.o build/ScalingSquaredStrings.o
 	g++ -g -std=c++14 build/main.o \
-	build/removeExclamationMarks.o \
+	build/ScalingSquaredStrings.o \
 	-o build/main                                                           
 
-build/main-ut: build/test_main.o build/removeExclamationMarksTest.o build/removeExclamationMarks.o
+build/main-ut: build/test_main.o build/ScalingSquaredStringsTest.o build/ScalingSquaredStrings.o
 	g++ -g -std=c++14 /usr/lib/libgtest.so /usr/lib/libgtest_main.so -pthread \
 	build/test_main.o \
-	build/removeExclamationMarksTest.o \
-	build/removeExclamationMarks.o \
+	build/ScalingSquaredStringsTest.o \
+	build/ScalingSquaredStrings.o \
 	-o build/main-ut											
 
 #src
@@ -34,8 +34,8 @@ build/VowelCount.o: src/VowelCount.cpp
 build/EvenNumbers.o: src/EvenNumbers.cpp
 	g++ -g -c src/EvenNumbers.cpp -o build/EvenNumbers.o
 
-build/removeExclamationMarks.o: src/removeExclamationMarks.cpp
-	g++ -g -c src/removeExclamationMarks.cpp -o build/removeExclamationMarks.o
+build/ScalingSquaredStrings.o: src/ScalingSquaredStrings.cpp
+	g++ -g -c src/ScalingSquaredStrings.cpp -o build/ScalingSquaredStrings.o
 
 #gtest
 build/test_main.o: tests/test_main.cpp
@@ -56,8 +56,8 @@ build/VowelCountTest.o: tests/VowelCountTest.cpp
 build/EvenNumbersTest.o: tests/EvenNumbersTest.cpp
 	g++ -g -c tests/EvenNumbersTest.cpp -o build/EvenNumbersTest.o 
 
-build/removeExclamationMarksTest.o: tests/removeExclamationMarksTest.cpp
-	g++ -g -c tests/removeExclamationMarksTest.cpp -o build/removeExclamationMarksTest.o 
+build/ScalingSquaredStringsTest.o: tests/ScalingSquaredStringsTest.cpp
+	g++ -g -c tests/ScalingSquaredStringsTest.cpp -o build/ScalingSquaredStringsTest.o 
 #clean
 clean:
 	rm -f build/*.o build/main build/main-ut			
