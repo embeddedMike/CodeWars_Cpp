@@ -9,5 +9,5 @@ TEST_F(removeExlamationMarksTest, getResultFromRemoveExlamationMarksProcedure) {
   std::string result =
       removeExlamationMarksGtest.removeExlamationMarksProcedure(
           "Hel!! o !!str");
-  ASSERT_STREQ("", result.c_str());
+  ASSERT_STREQ("Hel o str", result.c_str());
 }
