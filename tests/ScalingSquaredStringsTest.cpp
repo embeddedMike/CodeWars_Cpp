@@ -6,6 +6,6 @@ struct ScalingSquaredStringTest : public ::testing::Test {
 };
 
 TEST_F(ScalingSquaredStringTest, getResultFromScale) {
-  std::string result = ScalingSquaredStringsUnitTest.scale("", 2, 2);
-  ASSERT_STREQ(" ", result.c_str());
+  std::string result = ScalingSquaredStringsUnitTest.scale("abcd\nefgh", 2, 2);
+  ASSERT_STREQ("aabbccdd\naabbccdd\neeffgghh\neeffgghh", result.c_str());
 }
