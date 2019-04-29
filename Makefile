@@ -3,16 +3,16 @@
 all: build/main build/main-ut
 
 #exec
-build/main: build/main.o build/ScalingSquaredStrings.o
+build/main: build/main.o build/ComposingSquaredStrings.o
 	g++ -g -std=c++14 build/main.o \
-	build/ScalingSquaredStrings.o \
+	build/ComposingSquaredStrings.o \
 	-o build/main                                                           
 
-build/main-ut: build/test_main.o build/ScalingSquaredStringsTest.o build/ScalingSquaredStrings.o
+build/main-ut: build/test_main.o build/ComposingSquaredStringsTest.o build/ComposingSquaredStrings.o
 	g++ -g -std=c++14 /usr/lib/libgtest.so /usr/lib/libgtest_main.so -pthread \
 	build/test_main.o \
-	build/ScalingSquaredStringsTest.o \
-	build/ScalingSquaredStrings.o \
+	build/ComposingSquaredStringsTest.o \
+	build/ComposingSquaredStrings.o \
 	-o build/main-ut											
 
 #src
@@ -34,8 +34,8 @@ build/VowelCount.o: src/VowelCount.cpp
 build/EvenNumbers.o: src/EvenNumbers.cpp
 	g++ -g -c src/EvenNumbers.cpp -o build/EvenNumbers.o
 
-build/ScalingSquaredStrings.o: src/ScalingSquaredStrings.cpp
-	g++ -g -c src/ScalingSquaredStrings.cpp -o build/ScalingSquaredStrings.o
+build/ComposingSquaredStrings.o: src/ComposingSquaredStrings.cpp
+	g++ -g -c src/ComposingSquaredStrings.cpp -o build/ComposingSquaredStrings.o
 
 #gtest
 build/test_main.o: tests/test_main.cpp
@@ -56,8 +56,8 @@ build/VowelCountTest.o: tests/VowelCountTest.cpp
 build/EvenNumbersTest.o: tests/EvenNumbersTest.cpp
 	g++ -g -c tests/EvenNumbersTest.cpp -o build/EvenNumbersTest.o 
 
-build/ScalingSquaredStringsTest.o: tests/ScalingSquaredStringsTest.cpp
-	g++ -g -c tests/ScalingSquaredStringsTest.cpp -o build/ScalingSquaredStringsTest.o 
+build/ComposingSquaredStringsTest.o: tests/ComposingSquaredStringsTest.cpp
+	g++ -g -c tests/ComposingSquaredStringsTest.cpp -o build/ComposingSquaredStringsTest.o 
 #clean
 clean:
 	rm -f build/*.o build/main build/main-ut			
