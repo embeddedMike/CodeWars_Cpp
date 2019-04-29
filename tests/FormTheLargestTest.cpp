@@ -7,5 +7,5 @@ struct FormTheLargestTest : public ::testing::Test {
 
 TEST_F(FormTheLargestTest, getValueFromMaxNumber) {
   long long int result = LargestGtest.maxNumber(234256);
-  ASSERT_TRUE(result == 0);
+  ASSERT_TRUE(result == 654322);
 }
