@@ -3,29 +3,16 @@
 all: build/main build/main-ut
 
 #exec
-<<<<<<< HEAD
-build/main: build/main.o build/ComposingSquaredStrings.o
+build/main: build/main.o build/SortOutTheManFromBoys.o
 	g++ -g -std=c++14 build/main.o \
-	build/ComposingSquaredStrings.o \
+	build/SortOutTheManFromBoys.o \
 	-o build/main                                                           
 
-build/main-ut: build/test_main.o build/ComposingSquaredStringsTest.o build/ComposingSquaredStrings.o
+build/main-ut: build/test_main.o build/SortOutTheManFromBoysTest.o build/SortOutTheManFromBoys.o
 	g++ -g -std=c++14 /usr/lib/libgtest.so /usr/lib/libgtest_main.so -pthread \
 	build/test_main.o \
-	build/ComposingSquaredStringsTest.o \
-	build/ComposingSquaredStrings.o \
-=======
-build/main: build/main.o build/FormTheLargest.o
-	g++ -g -std=c++14 build/main.o \
-	build/FormTheLargest.o \
-	-o build/main                                                           
-
-build/main-ut: build/test_main.o build/FormTheLargestTest.o build/FormTheLargest.o
-	g++ -g -std=c++14 /usr/lib/libgtest.so /usr/lib/libgtest_main.so -pthread \
-	build/test_main.o \
-	build/FormTheLargestTest.o \
-	build/FormTheLargest.o \
->>>>>>> 8f71403... Modification of Makefile
+	build/SortOutTheManFromBoysTest.o \
+	build/SortOutTheManFromBoys.o \
 	-o build/main-ut											
 
 #src
@@ -47,13 +34,8 @@ build/VowelCount.o: src/VowelCount.cpp
 build/EvenNumbers.o: src/EvenNumbers.cpp
 	g++ -g -c src/EvenNumbers.cpp -o build/EvenNumbers.o
 
-<<<<<<< HEAD
-build/ComposingSquaredStrings.o: src/ComposingSquaredStrings.cpp
-	g++ -g -c src/ComposingSquaredStrings.cpp -o build/ComposingSquaredStrings.o
-=======
-build/FormTheLargest.o: src/FormTheLargest.cpp
-	g++ -g -c src/FormTheLargest.cpp -o build/FormTheLargest.o
->>>>>>> 8f71403... Modification of Makefile
+build/SortOutTheManFromBoys.o: src/SortOutTheManFromBoys.cpp
+	g++ -g -c src/SortOutTheManFromBoys.cpp -o build/SortOutTheManFromBoys.o
 
 #gtest
 build/test_main.o: tests/test_main.cpp
@@ -74,13 +56,8 @@ build/VowelCountTest.o: tests/VowelCountTest.cpp
 build/EvenNumbersTest.o: tests/EvenNumbersTest.cpp
 	g++ -g -c tests/EvenNumbersTest.cpp -o build/EvenNumbersTest.o 
 
-<<<<<<< HEAD
-build/ComposingSquaredStringsTest.o: tests/ComposingSquaredStringsTest.cpp
-	g++ -g -c tests/ComposingSquaredStringsTest.cpp -o build/ComposingSquaredStringsTest.o 
-=======
-build/FormTheLargestTest.o: tests/FormTheLargestTest.cpp
-	g++ -g -c tests/FormTheLargestTest.cpp -o build/FormTheLargestTest.o 
->>>>>>> 8f71403... Modification of Makefile
+build/SortOutTheManFromBoysTest.o: tests/SortOutTheManFromBoysTest.cpp
+	g++ -g -c tests/SortOutTheManFromBoysTest.cpp -o build/SortOutTheManFromBoysTest.o 
 #clean
 clean:
 	rm -f build/*.o build/main build/main-ut			
