@@ -2,3 +2,10 @@ build/
 .project
 .settings/*
 .cproject
+CodeWars_Cpp.cflags
+CodeWars_Cpp.config
+CodeWars_Cpp.creator
+CodeWars_Cpp.creator.user
+CodeWars_Cpp.cxxflags
+CodeWars_Cpp.files
+CodeWars_Cpp.includes
