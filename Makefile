@@ -3,16 +3,16 @@
 all: build/main build/main-ut
 
 #exec
-build/main: build/main.o build/SortOutTheManFromBoys.o
+build/main: build/main.o build/HighestScoringWord.o
 	g++ -g -std=c++14 build/main.o \
-	build/SortOutTheManFromBoys.o \
+	build/HighestScoringWord.o \
 	-o build/main                                                           
 
-build/main-ut: build/test_main.o build/SortOutTheManFromBoysTest.o build/SortOutTheManFromBoys.o
+build/main-ut: build/test_main.o build/HighestScoringWordTest.o build/HighestScoringWord.o
 	g++ -g -std=c++14 /usr/lib/libgtest.so /usr/lib/libgtest_main.so -pthread \
 	build/test_main.o \
-	build/SortOutTheManFromBoysTest.o \
-	build/SortOutTheManFromBoys.o \
+	build/HighestScoringWordTest.o \
+	build/HighestScoringWord.o \
 	-o build/main-ut											
 
 #src
@@ -34,8 +34,8 @@ build/VowelCount.o: src/VowelCount.cpp
 build/EvenNumbers.o: src/EvenNumbers.cpp
 	g++ -g -c src/EvenNumbers.cpp -o build/EvenNumbers.o
 
-build/SortOutTheManFromBoys.o: src/SortOutTheManFromBoys.cpp
-	g++ -g -c src/SortOutTheManFromBoys.cpp -o build/SortOutTheManFromBoys.o
+build/HighestScoringWord.o: src/HighestScoringWord.cpp
+	g++ -g -c src/HighestScoringWord.cpp -o build/HighestScoringWord.o
 
 #gtest
 build/test_main.o: tests/test_main.cpp
@@ -56,8 +56,8 @@ build/VowelCountTest.o: tests/VowelCountTest.cpp
 build/EvenNumbersTest.o: tests/EvenNumbersTest.cpp
 	g++ -g -c tests/EvenNumbersTest.cpp -o build/EvenNumbersTest.o 
 
-build/SortOutTheManFromBoysTest.o: tests/SortOutTheManFromBoysTest.cpp
-	g++ -g -c tests/SortOutTheManFromBoysTest.cpp -o build/SortOutTheManFromBoysTest.o 
+build/HighestScoringWordTest.o: tests/HighestScoringWordTest.cpp
+	g++ -g -c tests/HighestScoringWordTest.cpp -o build/HighestScoringWordTest.o 
 #clean
 clean:
 	rm -f build/*.o build/main build/main-ut			
