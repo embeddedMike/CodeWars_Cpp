@@ -9,7 +9,7 @@ build/main: build/main.o build/SortOutTheManFromBoys.o
 	-o build/main                                                           
 
 build/main-ut: build/test_main.o build/SortOutTheManFromBoysTest.o build/SortOutTheManFromBoys.o
-	g++ -g -std=c++14 /usr/lib/libgtest.so /usr/lib/libgtest_main.so -pthread \
+	g++ -g -std=c++14 lib/libgtest.so lib/libgtest_main.so -pthread \
 	build/test_main.o \
 	build/SortOutTheManFromBoysTest.o \
 	build/SortOutTheManFromBoys.o \
